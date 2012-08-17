@@ -1,1 +1,24 @@
-Banner: A Flash based banner animation sequencer.
+Banner: A Flash based animation sequencer.
+
+Capabilities/Function calls
+
+/************************************
+* Fade the clip in from alpha 0
+**/
+public function fadeIn(clip:MovieClip, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
+
+
+/************************************
+* Fade the clip out from alpha 1
+**/
+public function fadeOut(clip:MovieClip, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
+
+/************************************************
+* Scale the clip from current scale to scaleTo
+**/
+public function scale(clip:MovieClip, scaleTo:Number, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
+
+/*****************************************
+* Tranlate the clip to a point location
+**/
+public function move(clip:MovieClip, to:Point, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
