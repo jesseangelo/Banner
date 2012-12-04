@@ -5,7 +5,7 @@
 
 / Description
   
-  Banner was created to make animations easier to create and edit in Flash. 
+  Banner was created to make animations easier to create and edit in Flash. It uses AS3 and Flash's built-in Tween class.'
 
 
 / Features
@@ -14,33 +14,39 @@
   * Link animations
   * Ease of editing timing and fine-tuning
 
+/ How to use
 
-/ Function calls
+  1. Include the files in your project:
+    
+    'import com.jesseangelo.Banner.*;'
+    
+  2. Create instance:
+    
+    'Scheduler.getInstance();'
+    
+  3. Queue animations. Scheduler will perform animations one after another, in the order they are entered; the timing is based on the 'when' parameter.
+  For example:
+  
+    Scheduler.fadeIn(foo, 0);
+    Scheduler.fadeOut(foo, 100);
+    
+    Here Scheduler will fade in the movieClip 'foo' at 0 ms (immediately), wait 100 milliseconds, and finally fade 'foo' to alpha 0. 
+    
+  4. Profit!
+    
+/ Full Function calls
+  
+  When, speed, and easing are all optional parameters
+  
+  Fade the clip in from alpha 0
+  Scheduler.fadeIn(clip:MovieClip, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
 
-/************************************
-* Fade the clip in from alpha 0
+  Fade the clip out from alpha 1
+  Scheduler.fadeOut(clip:MovieClip, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
 
-  public function fadeIn(clip:MovieClip, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
+  Scale the clip from current scale to scaleTo
+  Scheduler.scale(clip:MovieClip, scaleTo:Number, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
 
-
-
-/************************************
-* Fade the clip out from alpha 1
-
-  public function fadeOut(clip:MovieClip, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
-
-
-
-/************************************************
-* Scale the clip from current scale to scaleTo
-
-  public function scale(clip:MovieClip, scaleTo:Number, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
-
-
-
-/*****************************************
-* Translate the clip to a point location
-
-  public function move(clip:MovieClip, to:Point, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
-
+  Translate the clip to a point location
+  Scheduler.move(clip:MovieClip, to:Point, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
 
