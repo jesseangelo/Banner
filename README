@@ -5,7 +5,7 @@
 
 / Description
   
-  Banner was created to make animations easier to create and edit in Flash. It uses AS3 and Flash's built-in Tween class.'
+  Banner was created to make animations easier to create and edit in Flash. It uses AS3 and the built-in Tween class.
 
 
 / Features
@@ -13,6 +13,7 @@
   * Short-hand notation
   * Link animations
   * Ease of editing timing and fine-tuning
+
 
 / How to use
 
@@ -34,19 +35,35 @@
     
   4. Profit!
     
+    
 / Full Function calls
   
-  When, speed, and easing are all optional parameters
+    Fade the clip in from alpha 0
+    Scheduler.fadeIn(clip:MovieClip, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
   
-  Fade the clip in from alpha 0
-  Scheduler.fadeIn(clip:MovieClip, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
+    Fade the clip out from alpha 1
+    Scheduler.fadeOut(clip:MovieClip, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
+  
+    Scale the clip from current scale to scaleTo
+    Scheduler.scale(clip:MovieClip, scaleTo:Number, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
+  
+    Translate the clip to a point location
+    Scheduler.move(clip:MovieClip, to:Point, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
 
-  Fade the clip out from alpha 1
-  Scheduler.fadeOut(clip:MovieClip, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
 
-  Scale the clip from current scale to scaleTo
-  Scheduler.scale(clip:MovieClip, scaleTo:Number, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
-
-  Translate the clip to a point location
-  Scheduler.move(clip:MovieClip, to:Point, when:Number=0, speed:Number=SPEED_NORMAL, easing=undefined)
-
+/ Parameter descriptions:
+  
+    clip:MovieClip (required) - A reference to the MovieClip to manipulate.
+    
+    scaleTo:Number (required for scale) - The new target scale.
+    
+    to:Point (required for move) - A point on the screen to move to.
+    
+    when:Number (optional) - The Number of milliseconds to begin after previous scheduled action. Default is 0.
+    
+    speed:Number (optional) - Number of seconds for the action to complete. Scheduler has a few constant speeds built-in. Default is SPEED_NORMAL.
+     SPEED_QUICKEST = 0.2;      SPEED_QUICKER  = 0.4;      SPEED_QUICK		= 0.6;
+	   SPEED_SNAPPY		= 0.8;      SPEED_NORMAL	= 1.0;      SPEED_SLOW		= 1.2;
+    
+    easing:ease (optional) - A reference to a Flash-based easing in fl.transitions.easing. Full reference here:
+      http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/fl/transitions/easing/package-detail.html
