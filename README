@@ -25,13 +25,14 @@
     
     'Scheduler.getInstance();'
     
-  3. Queue animations. Scheduler will perform animations one after another, in the order they are entered; the timing is based on the 'when' parameter.
-  For example:
+  3. Queue animations. Scheduler will perform animations one after another, in the order they are entered; 
+     the timing is based on the 'when' parameter. For example:
   
-    Scheduler.fadeIn(foo, 0);
-    Scheduler.fadeOut(foo, 100);
+    	Scheduler.fadeIn(foo, 0);
+    	Scheduler.fadeOut(foo, 100);
     
-    Here Scheduler will fade in the movieClip 'foo' at 0 ms (immediately), wait 100 milliseconds, and finally fade 'foo' to alpha 0. 
+     Here Scheduler will fade in the movieClip 'foo' at 0 ms (immediately), wait 100 milliseconds, and finally 
+     fade 'foo' to alpha 0. 
     
   4. Profit!
     
@@ -61,9 +62,11 @@
     
     when:Number (optional) - The Number of milliseconds to begin after previous scheduled action. Default is 0.
     
-    speed:Number (optional) - Number of seconds for the action to complete. Scheduler has a few constant speeds built-in. Default is SPEED_NORMAL.
-     SPEED_QUICKEST = 0.2;      SPEED_QUICKER  = 0.4;      SPEED_QUICK		= 0.6;
-	   SPEED_SNAPPY		= 0.8;      SPEED_NORMAL	= 1.0;      SPEED_SLOW		= 1.2;
+    speed:Number (optional) - Number of seconds for the action to complete. Scheduler has a few constant speeds built-in.
+    Default is SPEED_NORMAL.
+    
+    SPEED_QUICKEST = 0.2;      SPEED_QUICKER  = 0.4;      SPEED_QUICK	= 0.6;
+    SPEED_SNAPPY   = 0.8;      SPEED_NORMAL   = 1.0;      SPEED_SLOW	= 1.2;
     
     easing:ease (optional) - A reference to a Flash-based easing in fl.transitions.easing. Full reference here:
       http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/fl/transitions/easing/package-detail.html
